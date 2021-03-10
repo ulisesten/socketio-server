@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+//var get = require('../server/get/get');
+//var post = require('../server/post/post');
+//var static = require('../server/static/static');
+
+function app( req, res){
+
+    var mUse = false;
+
+    req.url = req.url.replace(/^(\.\.[\/\\])+/, '');
+
+    if(req.method === 'GET'){
+        
+        res.statusCode = 200;
+        res.write("Welcome to Socket.io server");
+        res.end();
+
+    }
+
+    else
+
+        res.end();
+        
+}
+
+module.exports = app;
